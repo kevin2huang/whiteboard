@@ -16,6 +16,7 @@ const pdfjsLib = require("pdfjs-dist");
 const urlParams = new URLSearchParams(window.location.search);
 let whiteboardId = urlParams.get("whiteboardid");
 const randomid = urlParams.get("randomid");
+let imageBase64;
 
 if (randomid) {
     whiteboardId = uuidv4();
@@ -574,6 +575,7 @@ function initWhiteboard() {
                         drawBackgroundGrid: ConfigService.drawBackgroundGrid,
                     },
                     function (imgData) {
+                        imageBase64 = imgData;
                         // Get the modal
                         const modal = document.getElementById("myModal");
                         modal.style.display = "block";
@@ -582,6 +584,8 @@ function initWhiteboard() {
                         drawingBox.style.backgroundImage = `url('${imgData}')`;
                     }
                 );
+
+                console.log("imageBase64", imageBase64);
             });
 
         // close modal
