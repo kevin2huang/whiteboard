@@ -564,6 +564,26 @@ function initWhiteboard() {
                 InfoService.toggleDisplayInfo();
             });
 
+        // open modal
+        $("#aiEditBtn")
+            .off("click")
+            .click(() => {
+                // Get the modal
+                let modal = document.getElementById("myModal");
+
+                modal.style.display = "block";
+            });
+
+        // close modal
+        $("#closeModal")
+            .off("click")
+            .click(() => {
+                // Get the modal
+                let modal = document.getElementById("myModal");
+
+                modal.style.display = "none";
+            });
+
         var btnsMini = false;
         $("#minMaxBtn")
             .off("click")
