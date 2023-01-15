@@ -574,6 +574,7 @@ function initWhiteboard() {
                         drawBackgroundGrid: ConfigService.drawBackgroundGrid,
                     },
                     function (imgData) {
+                        console.log("test");
                         // Get the modal
                         const modal = document.getElementById("myModal");
                         modal.style.display = "block";
