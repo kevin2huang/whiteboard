@@ -241,7 +241,6 @@ button {
     padding: 20px;
     border: 1px solid #888;
     width: 95%;
-    height: 97%;
 }
 
 /* The Close Button */
@@ -264,4 +263,5 @@ button {
     width: 50vw;
     border: 1px solid black;
     text-align: center;
+    background-size: cover;
 }

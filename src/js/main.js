@@ -568,10 +568,20 @@ function initWhiteboard() {
         $("#aiEditBtn")
             .off("click")
             .click(() => {
-                // Get the modal
-                let modal = document.getElementById("myModal");
+                whiteboard.getImageDataBase64(
+                    {
+                        imageFormat: ConfigService.imageDownloadFormat,
+                        drawBackgroundGrid: ConfigService.drawBackgroundGrid,
+                    },
+                    function (imgData) {
+                        // Get the modal
+                        const modal = document.getElementById("myModal");
+                        modal.style.display = "block";
 
-                modal.style.display = "block";
+                        const drawingBox = document.getElementById("drawingBox");
+                        drawingBox.style.backgroundImage = `url('${imgData}')`;
+                    }
+                );
             });
 
         // close modal
